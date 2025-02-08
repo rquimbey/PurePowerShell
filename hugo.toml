@@ -1,4 +1,4 @@
 baseURL = 'https://PurePowerShell.com/'
 languageCode = 'en-us'
-title = 'Q's Blog'
+title = "Q's Blog"
 theme = "mainroad"

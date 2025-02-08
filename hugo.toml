@@ -1,0 +1,4 @@
+baseURL = 'https://PurePowerShell.com/'
+languageCode = 'en-us'
+title = 'Q's Blog'
+theme = "mainroad"

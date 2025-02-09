@@ -3,7 +3,7 @@ date = '2025-02-08T10:06:52-08:00'
 draft = false
 title = 'First Post using Hugo!'
 +++
-My name is Robert Quimbey though I'm often called Q since I'm commonly one of many Rob's, Bob's, and Robert's on an extended team. I work for [Pure Storage](https://www.purestorage.com/ "purestorage") as a Field Solutions Architect (FSA).  I get to spend most of my time helping customers Migrate to [Microsoft Solutions](https://support.purestorage.com/bundle/m_microsoft_platform_guide/page/Solutions/topics/reference/r_microsoft_platform_guide.html "microsoftsolutions"), and for existing customers, develop more value out of their existing Pure Storage infrastructure. 
+My name is Robert Quimbey though I'm often called Q since I'm commonly one of many Rob's, Bob's, and Robert's on an extended team. I work for [Pure Storage](https://www.purestorage.com/ "purestorage") as a Field Solutions Architect (FSA).  I get to spend most of my time helping customers migrate to [Microsoft Solutions](https://support.purestorage.com/bundle/m_microsoft_platform_guide/page/Solutions/topics/reference/r_microsoft_platform_guide.html "microsoftsolutions"), and for existing customers, develop more value out of their existing Pure Storage infrastructure. 
 
 I have spent the past couple of decades working with Microsoft Software, and even spent almost 9 years in the Exchange team in Redmond at Microsoft! I focus on automation with PowerShell, databases, storage technologies, Windows (and Linux \:), Failover Clustering, and even Azure.
 

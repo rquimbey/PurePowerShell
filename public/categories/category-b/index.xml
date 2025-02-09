@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Category B on Robert Quimbey&#39;s Blog</title>
+    <link>http://localhost:1313/categories/category-b/</link>
+    <description>Recent content in Category B on Robert Quimbey&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Feb 2025 10:06:52 -0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/category-b/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Post using Hugo!</title>
+      <link>http://localhost:1313/posts/my-first-post/</link>
+      <pubDate>Sat, 08 Feb 2025 10:06:52 -0800</pubDate>
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <description>&lt;p&gt;My name is Robert Quimbey though I&amp;rsquo;m often called Q since I&amp;rsquo;m commonly one of many Rob&amp;rsquo;s, Bob&amp;rsquo;s, and Robert&amp;rsquo;s on an extended team. I work for Pure Storage as a Field Solutions Architect.  I get to spend most of my time helping customers Migrate to Microsoft Solutions,and for existing customers, develop more value out of their existing Pure Storage infrastructure.&lt;/p&gt;&#xA;&lt;p&gt;I have spent the past couple of decades working with Microsoft Software, and even spent almost 9 years in the Exchange team in Redmond! I focus on automation with PowerShell, databases, storage technologies, Windows, Failover Clustering, and even Azure.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

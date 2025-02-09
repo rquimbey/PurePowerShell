@@ -1,10 +1,6 @@
 +++
-date = '2025-02-08T09:03:11-08:00'
-draft = true
-title = 'My First Post'
+date = '2025-02-08T11:06:52-08:00'
+draft = false
+title = 'Windows Admin Center Modernized Gateway & Pure Storage FlashArray'
 +++
-## Introduction
-
-This is **bold** text, and this is *emphasized* text.
-
-Visit the [Hugo](https://gohugo.io) website!
+Microsoft recently released a major update to Windows Admin Center (WAC). It was originally titled the "Modernized Gateway" and by GA it was simply the "v2 Gateway". Speed is the largest result with page loading times 2-10x faster. A major change was moving to .NET Core from the .NET Framework which broke all existing extensions. Pure Storage released an update to our FlashArray extension right before Christmas (2024).

@@ -42,14 +42,14 @@
 			<h1 class="post__title">Hyper-V VSS</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-02-15T11:05:00-08:00">February 15, 2025</time></div></div>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-02-15T11:05:00-08:00">February 15, 2025</time>
+	<time class="meta__text" datetime="2025-02-15T12:00:54-08:00">(Last Modified: February 15, 2025)</time></div></div>
 		</header>
 		<div class="content post__content clearfix">
 			<p>There are many different strategies for backing up a production Hyper-V environment. In this blog post I will focus on a hardware Volume Shadow-Copy Service (VSS) snapshot of a Cluster Shared Volume (CSV). VSS creates an application consistent snapshot where all of the VMs are in a good state so that if you restore the volume, or clone the snapshot and mount it outside of the Failover Cluster, the VMs will boot without issue. Keep in mind that this is a hypervisor driven snapshot, which is different from an application snapshot inside of a virtual machine. An Exchange Server or SQL Server database will not show that a &lsquo;backup&rsquo; has been taken. Some third party backup applications (VSS Requestors), can handle this, but that is because the backup application is performing additional work inside of the VMs.</p>
 <p>A pre-requisite for my example Hyper-V VSS script is to install and configure the Pure Storage VSS Hardware Provider. The provider can be found at: <a href="https://github.com/PureStorage-Connect/VSS-Provider">https://github.com/PureStorage-Connect/VSS-Provider</a></p>
-<pre><code>Run the pureproviderconfig.exe in 'c:\program files\pure storage\vss\provider' to add the FlashArray.
-
-For example:
+<p>Run the pureproviderconfig.exe in &lsquo;c:\program files\pure storage\vss\provider&rsquo; to add the FlashArray.</p>
+<pre><code>For example:
 pureproviderconfig add --url https://ipaddress.of.flasharray --user USERNAME FlashArrayFriendlyName
 </code></pre>
 <p>Once this has been done check that the provider was able to login to the FlashArray with:</p>
@@ -61,11 +61,13 @@ pureproviderconfig add --url https://ipaddress.of.flasharray --user USERNAME Fla
 <pre><code>For Example: New-VSSHVBackup -Path &quot;C:\clusterstorage\volume1&quot;
 </code></pre>
 <p>Most VSS backups occur in 5-10 seconds with many different VSS writers involved. The CSV writer is particularly slow, and that lag increases linearly as additional nodes are added to a cluster. With a 1-2 node Failover Cluster expect a 60-150 second lag before a snapshot command is sent to external storage, and another 30-60 seconds before the script is complete.</p>
-<p><img src="images/diskshadow.jpg" alt="DiskShadow"></p>
+<p><img src="diskshadow.jpg" alt="DiskShadow"></p>
 <p>In the Pure Storage FlashArray GUI, the audit log shows that a VSS snapshot was taken, because the VSS Provider will append a suffix which starts with &lsquo;VSS-&rsquo;</p>
-<p><img src="images/falog.jpg" alt="PureLog"></p>
+<p><img src="falog.jpg" alt="PureLog"></p>
 <p>In the Pure Storage FlashArray GUI, the Volume also shows the snapshot was created. Since this Volume was part of a Protection Group, a Protection Group snapshot was taken. A Protection Group has multiple purposes. A Protect Group snapshot ensures that all Volumes that are in the Protection Group are consistent with each other. Policies can be assigned to a Protection Group that involve automated snapshots at particular intervals, retention settings that indicate the number of snapshots and length of retention at the source and target location, and the target or targets where the snapshots are to be replicated. This can be another physical or virtual (Cloud Block Store) FlashArray, or a FlashBlade or cloud volume.</p>
-<p><img src="images/pgroupss.jpg" alt="Pgroup"></p>
+<p>In this case the Protection Group has a target on another FlashArray, so the snapshot is automatically replicated to a remote site.</p>
+<p><img src="pgroupss.jpg" alt="Pgroup"></p>
+<p>Next time I&rsquo;ll focus on how to use both the local and remote snapshots to recover a VM.</p>
 
 		</div>
 		<footer class="post__footer">

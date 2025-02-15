@@ -29,7 +29,7 @@ Most VSS backups occur in 5-10 seconds with many different VSS writers involved.
 
 ![DiskShadow](diskshadow.jpg)
 
-In the Pure Storage FlashArray GUI, the audit log shows that a VSS snapshot was taken, because the VSS Provider will append a suffix which starts with 'VSS-'
+In the Pure Storage FlashArray GUI, the audit log shows that a VSS snapshot was taken, because the VSS Provider will append a suffix which starts with 'VSS-' and ends with the Shadow Set ID that VSS assigns to the snapshot. This ID is stored in the cabinet file that must be referenced in any attempt to mount (expose) or restore.
 
 ![PureLog](falog.jpg)
 

@@ -21,7 +21,7 @@ If it has an issue, it probably means the FlashArray has been upgraded to at lea
 
 This script is focusing on a VSS backup of a CSV. If there is demand (open requests in GIT), I will add logging, error checking, and an event lookup that backup succeeded. If there is demand for both mounting (expose in VSS) or restore, I can add those functions as well but I have found in production these are seldom used.
 
-With the script, open as administrator a PowerShell session and use Import-Module on the filename. Next initiate a VSS backup by simply passing the path to the CSV as the path parameter.
+With the script, open as administrator a PowerShell session and use Import-Module on the filename. Next initiate a VSS backup by simply passing the path to the CSV as the path parameter. The script can be found here: https://github.com/rquimbey/scripts/blob/main/hv.ps1
 
     For Example: New-VSSHVBackup -Path "C:\clusterstorage\volume1"
 

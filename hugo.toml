@@ -6,9 +6,10 @@ enableGitInfo = true
 
 [params]
  subtitle = "Microsoft Solutions including PowerShell, Hyper-V, Failover Clustering, System Center, Windows Server, SQL, and Exchange"
+ post_meta = ["date"]
    [params.contact]
     email = 'rquimbey@purestorage.com'
-[Author] # Used in authorbox
+[Author] 
   name = "Robert Quimbey"
   bio = "Robert aka 'Q' has spent the past 25 years in the Microsoft Storage world deep into Exchange, SQL, Failover Clustering, Windows Server, Hyper-V, and Storage Area Networks."
 

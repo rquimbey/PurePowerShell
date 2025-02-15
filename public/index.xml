@@ -6,14 +6,21 @@
     <description>Recent content on Robert Quimbey&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Feb 2025 10:51:42 -0800</lastBuildDate>
+    <lastBuildDate>Sat, 15 Feb 2025 11:05:00 -0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hyper-V VSS</title>
+      <link>http://localhost:1313/posts/hv-vss/</link>
+      <pubDate>Sat, 15 Feb 2025 11:05:00 -0800</pubDate>
+      <guid>http://localhost:1313/posts/hv-vss/</guid>
+      <description>&lt;p&gt;There are many different strategies for backing up a production Hyper-V environment. In this blog post I will focus on a hardware Volume Shadow-Copy Service (VSS) snapshot of a Cluster Shared Volume (CSV). VSS creates an application consistent snapshot where all of the VMs are in a good state so that if you restore the volume, or clone the snapshot and mount it outside of the Failover Cluster, the VMs will boot without issue. Keep in mind that this is a hypervisor driven snapshot, which is different from an application snapshot inside of a virtual machine. An Exchange Server or SQL Server database will not show that a &amp;lsquo;backup&amp;rsquo; has been taken. Some third party backup applications (VSS Requestors), can handle this, but that is because the backup application is performing additional work inside of the VMs.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>First Post using Hugo!</title>
       <link>http://localhost:1313/posts/my-first-post/</link>
       <pubDate>Sat, 08 Feb 2025 10:06:52 -0800</pubDate>
       <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>&lt;p&gt;My name is Robert Quimbey though I&amp;rsquo;m often called Q since I&amp;rsquo;m commonly one of many Rob&amp;rsquo;s, Bob&amp;rsquo;s, and Robert&amp;rsquo;s on an extended team. I work for &lt;a href=&#34;https://www.purestorage.com/&#34; title=&#34;purestorage&#34;&gt;Pure Storage&lt;/a&gt; as a Field Solutions Architect.  I get to spend most of my time helping customers Migrate to &lt;a href=&#34;https://support.purestorage.com/bundle/m_microsoft_platform_guide/page/Solutions/topics/reference/r_microsoft_platform_guide.html&#34; title=&#34;microsoftsolutions&#34;&gt;Microsoft Solutions&lt;/a&gt;, and for existing customers, develop more value out of their existing Pure Storage infrastructure.&lt;/p&gt;&#xA;&lt;p&gt;I have spent the past couple of decades working with Microsoft Software, and even spent almost 9 years in the Exchange team in Redmond at Microsoft! I focus on automation with PowerShell, databases, storage technologies, Windows (and Linux :), Failover Clustering, and even Azure.&lt;/p&gt;</description>
+      <description>&lt;p&gt;My name is Robert Quimbey though I&amp;rsquo;m often called Q since I&amp;rsquo;m commonly one of many Rob&amp;rsquo;s, Bob&amp;rsquo;s, and Robert&amp;rsquo;s on an extended team. I work for &lt;a href=&#34;https://www.purestorage.com/&#34; title=&#34;purestorage&#34;&gt;Pure Storage&lt;/a&gt; as a Field Solutions Architect (FSA).  I get to spend most of my time helping customers migrate to &lt;a href=&#34;https://support.purestorage.com/bundle/m_microsoft_platform_guide/page/Solutions/topics/reference/r_microsoft_platform_guide.html&#34; title=&#34;microsoftsolutions&#34;&gt;Microsoft Solutions&lt;/a&gt;, and for existing customers, develop more value out of their existing Pure Storage infrastructure.&lt;/p&gt;&#xA;&lt;p&gt;I have spent the past couple of decades working with Microsoft Software, and even spent almost 9 years in the Exchange team in Redmond at Microsoft! I focus on automation with PowerShell, databases, storage technologies, Windows (and Linux :), Failover Clustering, and even Azure.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

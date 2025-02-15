@@ -6,14 +6,14 @@
     <description>Recent content in Posts on Robert Quimbey&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Feb 2025 10:51:42 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2025 12:10:33 -0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First Post using Hugo!</title>
       <link>http://localhost:1313/posts/my-first-post/</link>
       <pubDate>Sat, 08 Feb 2025 10:06:52 -0800</pubDate>
       <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>&lt;p&gt;My name is Robert Quimbey though I&amp;rsquo;m often called Q since I&amp;rsquo;m commonly one of many Rob&amp;rsquo;s, Bob&amp;rsquo;s, and Robert&amp;rsquo;s on an extended team. I work for &lt;a href=&#34;https://www.purestorage.com/&#34; title=&#34;purestorage&#34;&gt;Pure Storage&lt;/a&gt; as a Field Solutions Architect.  I get to spend most of my time helping customers Migrate to &lt;a href=&#34;https://support.purestorage.com/bundle/m_microsoft_platform_guide/page/Solutions/topics/reference/r_microsoft_platform_guide.html&#34; title=&#34;microsoftsolutions&#34;&gt;Microsoft Solutions&lt;/a&gt;, and for existing customers, develop more value out of their existing Pure Storage infrastructure.&lt;/p&gt;&#xA;&lt;p&gt;I have spent the past couple of decades working with Microsoft Software, and even spent almost 9 years in the Exchange team in Redmond at Microsoft! I focus on automation with PowerShell, databases, storage technologies, Windows (and Linux :), Failover Clustering, and even Azure.&lt;/p&gt;</description>
+      <description>&lt;p&gt;My name is Robert Quimbey though I&amp;rsquo;m often called Q since I&amp;rsquo;m commonly one of many Rob&amp;rsquo;s, Bob&amp;rsquo;s, and Robert&amp;rsquo;s on an extended team. I work for &lt;a href=&#34;https://www.purestorage.com/&#34; title=&#34;purestorage&#34;&gt;Pure Storage&lt;/a&gt; as a Field Solutions Architect (FSA).  I get to spend most of my time helping customers migrate to &lt;a href=&#34;https://support.purestorage.com/bundle/m_microsoft_platform_guide/page/Solutions/topics/reference/r_microsoft_platform_guide.html&#34; title=&#34;microsoftsolutions&#34;&gt;Microsoft Solutions&lt;/a&gt;, and for existing customers, develop more value out of their existing Pure Storage infrastructure.&lt;/p&gt;&#xA;&lt;p&gt;I have spent the past couple of decades working with Microsoft Software, and even spent almost 9 years in the Exchange team in Redmond at Microsoft! I focus on automation with PowerShell, databases, storage technologies, Windows (and Linux :), Failover Clustering, and even Azure.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -61,11 +61,11 @@ pureproviderconfig add --url https://ipaddress.of.flasharray --user USERNAME Fla
 <pre><code>For Example: New-VSSHVBackup -Path &quot;C:\clusterstorage\volume1&quot;
 </code></pre>
 <p>Most VSS backups occur in 5-10 seconds with many different VSS writers involved. The CSV writer is particularly slow, and that lag increases linearly as additional nodes are added to a cluster. With a 1-2 node Failover Cluster expect a 60-150 second lag before a snapshot command is sent to external storage, and another 30-60 seconds before the script is complete.</p>
-<p><img src="images/diskshadow.jpg" alt="DiskShadow"></p>
+<p><img src="diskshadow.jpg" alt="DiskShadow"></p>
 <p>In the Pure Storage FlashArray GUI, the audit log shows that a VSS snapshot was taken, because the VSS Provider will append a suffix which starts with &lsquo;VSS-&rsquo;</p>
-<p><img src="images/falog.jpg" alt="PureLog"></p>
+<p><img src="falog.jpg" alt="PureLog"></p>
 <p>In the Pure Storage FlashArray GUI, the Volume also shows the snapshot was created. Since this Volume was part of a Protection Group, a Protection Group snapshot was taken. A Protection Group has multiple purposes. A Protect Group snapshot ensures that all Volumes that are in the Protection Group are consistent with each other. Policies can be assigned to a Protection Group that involve automated snapshots at particular intervals, retention settings that indicate the number of snapshots and length of retention at the source and target location, and the target or targets where the snapshots are to be replicated. This can be another physical or virtual (Cloud Block Store) FlashArray, or a FlashBlade or cloud volume.</p>
-<p><img src="images/pgroupss.jpg" alt="Pgroup"></p>
+<p><img src="/content/posts/pgroupss.jpg" alt="Pgroup"></p>
 
 		</div>
 		<footer class="post__footer">

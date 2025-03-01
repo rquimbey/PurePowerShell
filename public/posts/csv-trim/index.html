@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>VSS - Robert Quimbey&#39;s Blog</title>
+	<title>Hyper-V CSV Trim - Robert Quimbey&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,6 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="/tags/vss/index.xml" title="Robert Quimbey's Blog">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -37,32 +36,43 @@
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main list" role="main">
-	<header class="main__header">
-		<h1 class="main__title">VSS</h1>
-	</header><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/hv-vss/" rel="bookmark">
-			Hyper-V VSS
-			</a>
-		</h2>
-		<div class="list__meta meta">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Hyper-V CSV Trim</h1>
+			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-02-15T11:05:00-08:00">February 15, 2025</time>
-	<time class="meta__text" datetime="2025-02-15T12:13:50-08:00">(Last Modified: February 15, 2025)</time></div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		<p>There are many different strategies for backing up a production Hyper-V environment. In this blog post I will focus on a hardware Volume Shadow-Copy Service (VSS) snapshot of a Cluster Shared Volume (CSV). VSS creates an application consistent snapshot where all of the VMs are in a good state so that if you restore the volume, or clone the snapshot and mount it outside of the Failover Cluster, the VMs will boot without issue. Keep in mind that this is a hypervisor driven snapshot, which is different from an application snapshot inside of a virtual machine. An Exchange Server or SQL Server database will not show that a &lsquo;backup&rsquo; has been taken. Some third party backup applications (VSS Requestors), can handle this, but that is because the backup application is performing additional work inside of the VMs.</p>
-	</div>
-</article>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-02-28T16:03:01-08:00">February 28, 2025</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>asdf</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M4 0h8s2 0 4 2l15 15s2 2 0 4L21 31s-2 2-4 0L2 16s-2-2-2-4V3s0-3 4-3m3 10a3 3 0 0 0 0-6 3 3 0 0 0 0 6"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/flasharray/" rel="tag">FlashArray</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hyper-v/" rel="tag">Hyper-V</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/csv/" rel="tag">CSV</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
 </main>
+
+
 
 
 			</div>
 			
-
 		</div>
 		<footer class="footer">
 	<div class="container footer__container flex">

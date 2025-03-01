@@ -13,7 +13,7 @@
       <link>http://localhost:1313/posts/csv-trim/</link>
       <pubDate>Fri, 28 Feb 2025 16:03:01 -0800</pubDate>
       <guid>http://localhost:1313/posts/csv-trim/</guid>
-      <description>&lt;p&gt;asdf&lt;/p&gt;</description>
+      <description>&lt;p&gt;TLDR: Newer versions of Windows will free blocks on a Cluster Shared Volume.&lt;/p&gt;&#xA;&lt;p&gt;I work on a lot of Failover Clusters and about once a year it would come up that a customer had a situation with disk space. Usually it was older, out of support, versions of Windows and the scenario was that recently a bunch of VMs were moved from 1 Cluster Shared Volume (CSV) to another. The CSV volume on the FlashArray was not releasing the blocks. That left a customer with a handful of choices:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

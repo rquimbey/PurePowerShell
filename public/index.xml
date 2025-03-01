@@ -6,8 +6,15 @@
     <description>Recent content on Robert Quimbey&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Feb 2025 12:13:50 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2025 16:03:01 -0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hyper-V CSV Trim</title>
+      <link>http://localhost:1313/posts/csv-trim/</link>
+      <pubDate>Fri, 28 Feb 2025 16:03:01 -0800</pubDate>
+      <guid>http://localhost:1313/posts/csv-trim/</guid>
+      <description>&lt;p&gt;TLDR: Newer versions of Windows will free blocks on a Cluster Shared Volume.&lt;/p&gt;&#xA;&lt;p&gt;I work on a lot of Failover Clusters and about once a year it would come up that a customer had a situation with disk space. Usually it was older, out of support, versions of Windows and the scenario was that recently a bunch of VMs were moved from 1 Cluster Shared Volume (CSV) to another. The CSV volume on the FlashArray was not releasing the blocks. That left a customer with a handful of choices:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hyper-V VSS</title>
       <link>http://localhost:1313/posts/hv-vss/</link>

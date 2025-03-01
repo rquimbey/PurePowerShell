@@ -2,7 +2,6 @@ baseURL = 'https://PurePowerShell.com/'
 languageCode = 'en-us'
 title = "Robert Quimbey's Blog"
 theme = "mainroad"
-enableGitInfo = true
 
 [params]
  subtitle = "Microsoft Solutions including PowerShell, Hyper-V, Failover Clustering, System Center, Windows Server, SQL, and Exchange"

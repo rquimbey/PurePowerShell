@@ -49,7 +49,7 @@
 			<p>I have been working on Azure Local (formerly Azure Stack HCI) for almost five years, and we are now less than 1 month from GA for Fibre Channel external storage. For the initial support in April 2026, there is no OS code change, so you should deploy Azure Local with a Windows Server 2025 certified Fibre Channel card that your server OEM supports in that server model. Connecting to the Everpure FlashArray is done after the deployment from the Azure Portal.</p>
 <p>A simplistic summary of what has to happen after Azure Local is deployed:</p>
 <ul>
-<li>Install a 16Gb or faster FC card. The number of cards and ports on each card will be determine by the failure cases you are solving for as well as the bandwidth required in the event of those failures.</li>
+<li>Install a 16Gb or faster FC card. The number of cards and ports on each card will be determined by the failure cases you are solving for as well as the bandwidth required in the event of those failures.</li>
 <li>Install the FC Driver/Firmware</li>
 <li>Physically connect Azure Local to Everpure FlashArray</li>
 <li>Configure FC zoning</li>
@@ -63,19 +63,26 @@
 </ul>
 <p>In this IPMI connected KVM screen, you can see the virtual disks associated with my Windows Server 2025 VM. Hyper-V is using the VHD file, whereas hydration keeps a tracking VHDX file that is registered in the Azure Resource Group.
 <img src="servercore-disks.png" alt="servercore"></p>
-<p>In Failover Cluster Manager you can see the Virtual Machines and other Azure Local resources under Roles.
+<p>===<br>
+In Failover Cluster Manager you can see the Virtual Machines and other Azure Local resources under Roles.
 <img src="fcm-roles.png" alt="fcm-roles"></p>
-<p>If we navigate to disks, you can see the 2 disk per node S2D, HCI CSV as well as the 2 Everpure volumes.
+<p>===<br>
+If we navigate to disks, you can see the 2 disk per node S2D, HCI CSV as well as the 2 Everpure volumes.
 <img src="fcm-disk.png" alt="fcm-disk"></p>
-<p>Windows Admin Center can also show you detailed Virtual Machine information.
+<p>===<br>
+Windows Admin Center can also show you detailed Virtual Machine information.
 <img src="wac-amode.png" alt="wac"></p>
-<p>Navigating to the FlashArray GUI, you can see the Host and Host Groups where the 2 Volumes are connected to the Host Group. This makes is simpler to add and subtract nodes in a cluster since the mapping is to the Host Group and not the Host.
+<p>===<br>
+Navigating to the FlashArray GUI, you can see the Host and Host Groups where the 2 Volumes are connected to the Host Group. This makes is simpler to add and subtract nodes in a cluster since the mapping is to the Host Group and not the Host.
 <img src="host-hostgroup.png" alt="host-hostgroup"></p>
-<p>This image shows the 3PB Volume that is configured as a CSV and attached to the Azure Local cluster. It is registered as a Storage Path.
+<p>===<br>
+This image shows the 3PB Volume that is configured as a CSV and attached to the Azure Local cluster. It is registered as a Storage Path.
 <img src="3pb-vol.png" alt="3pb-vol"></p>
-<p>In the Azure Portal, the VMs disks are stored on the Everpure Storage Path.
+<p>===<br>
+In the Azure Portal, the VMs disks are stored on the Everpure Storage Path.
 <img src="vm-disks.png" alt="vm-disks"></p>
-<p>In the Azure Portal, the 2 Everpure volumes are both registered under Storage Path. In this deployment, since infrastructure-only was chosen, there wasn&rsquo;t enough local storage to bother utilizing it for anything other than infrastructure, such as the Azure Arc Resource Bridge VM, so it was not registered as a Storage Path.
+<p>===<br>
+In the Azure Portal, the 2 Everpure volumes are both registered under Storage Path. In this deployment, since infrastructure-only was chosen, there wasn&rsquo;t enough local storage to bother utilizing it for anything other than infrastructure, such as the Azure Arc Resource Bridge VM, so it was not registered as a Storage Path.
 <img src="storagepath.png" alt="storagepath"></p>
 
 		</div>

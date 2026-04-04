@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Azure Local and Everpure - Robert Quimbey&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Robert Quimbey&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Robert Quimbey&#39;s Blog</div>
+					<div class="logo__tagline">Microsoft Solutions including PowerShell, Hyper-V, Failover Clustering, System Center, Windows Server, SQL, and Exchange</div>
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Azure Local and Everpure</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2026-04-04T13:15:39-07:00">April 04, 2026</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>I have been working on Azure Local (formerly Azure Stack HCI) for almost five years, and we are now less than 1 month from GA for Fibre Channel external storage. For the initial support in April 2026, there is no OS code change, so you should deploy Azure Local with a Windows Server 2025 certified Fibre Channel card that your server OEM supports in that server model. Connecting to the Everpure FlashArray is done after the deployment from the Azure Portal.</p>
+<p>A simplistic summary of what has to happen after Azure Local is deployed:</p>
+<ul>
+<li>Install a 16Gb or faster FC card. The number of cards and ports on each card will be determine by the failure cases you are solving for as well as the bandwidth required in the event of those failures.</li>
+<li>Install the FC Driver/Firmware</li>
+<li>Physically connect Azure Local to Everpure FlashArray</li>
+<li>Configure FC zoning</li>
+<li>Create a Host and configure the FC WWN Host Port on the FlashArray</li>
+<li>Create a Host Group and add all of the Azure Local Hosts to it on the FlashArray</li>
+<li>Create a Volume on the FlashArray and add it to the Host Group</li>
+<li>Format the new Volume on one node in the cluster</li>
+<li>Add the volume to the cluster</li>
+<li>Configure the cluster disk as a cluster shared volume (CSV)</li>
+<li>In the Azure Portal, add the Storage Path to the Everpure CSV</li>
+</ul>
+<p>In this IPMI connected KVM screen, you can see the virtual disks associated with my Windows Server 2025 VM. Hyper-V is using the VHD file, whereas hydration keeps a tracking VHDX file that is registered in the Azure Resource Group.
+<img src="servercore-disks.png" alt="servercore"></p>
+<p>In Failover Cluster Manager you can see the Virtual Machines and other Azure Local resources under Roles.
+<img src="fcm-roles.png" alt="fcm-roles"></p>
+<p>If we navigate to disks, you can see the 2 disk per node S2D, HCI CSV as well as the 2 Everpure volumes.
+<img src="fcm-disk.png" alt="fcm-disk"></p>
+<p>Windows Admin Center can also show you detailed Virtual Machine information.
+<img src="wac-amode.png" alt="wac"></p>
+<p>Navigating to the FlashArray GUI, you can see the Host and Host Groups where the 2 Volumes are connected to the Host Group. This makes is simpler to add and subtract nodes in a cluster since the mapping is to the Host Group and not the Host.
+<img src="host-hostgroup.png" alt="host-hostgroup"></p>
+<p>This image shows the 3PB Volume that is configured as a CSV and attached to the Azure Local cluster. It is registered as a Storage Path.
+<img src="3pb-vol.png" alt="3pb-vol"></p>
+<p>In the Azure Portal, the VMs disks are stored on the Everpure Storage Path.
+<img src="vm-disks.png" alt="vm-disks"></p>
+<p>In the Azure Portal, the 2 Everpure volumes are both registered under Storage Path. In this deployment, since infrastructure-only was chosen, there wasn&rsquo;t enough local storage to bother utilizing it for anything other than infrastructure, such as the Azure Arc Resource Bridge VM, so it was not registered as a Storage Path.
+<img src="storagepath.png" alt="storagepath"></p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M4 0h8s2 0 4 2l15 15s2 2 0 4L21 31s-2 2-4 0L2 16s-2-2-2-4V3s0-3 4-3m3 10a3 3 0 0 0 0-6 3 3 0 0 0 0 6"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/azure-local/" rel="tag">Azure Local</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/flasharray/" rel="tag">FlashArray</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hyper-v/" rel="tag">Hyper-V</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2026 Robert Quimbey&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

@@ -13,7 +13,7 @@
       <link>http://localhost:1313/posts/wac/</link>
       <pubDate>Sat, 08 Feb 2025 12:06:52 -0800</pubDate>
       <guid>http://localhost:1313/posts/wac/</guid>
-      <description>&lt;p&gt;Microsoft recently released a major update to Windows Admin Center (WAC). It was originally titled the &amp;ldquo;Modernized Gateway&amp;rdquo; and by GA it was simply the &amp;ldquo;v2 Gateway&amp;rdquo;. Speed is the biggest improvement with page loading times now 2-10x faster. A major change was moving to .NET Core from the .NET Framework which broke all existing extensions. Pure Storage released an update to our FlashArray extension right before Christmas (2024). more&amp;hellip;..&lt;/p&gt;</description>
+      <description>&lt;p&gt;Microsoft recently released a major update to Windows Admin Center (WAC) &lt;a href=&#34;https://aka.ms/wacdownload&#34; title=&#34;wac&#34;&gt;[direct download link]&lt;/a&gt;. It was originally titled the &amp;ldquo;Modernized Gateway&amp;rdquo; and by GA it was simply the &amp;ldquo;v2 Gateway&amp;rdquo;. Speed is the biggest improvement with page loading times now 2-10x faster. A major change was moving to .NET Core which broke all existing extensions that utilized .NET Framework. Pure Storage released an update to our FlashArray extension right before Christmas (2024). Once you upgrade to or install the v2 Gateway, click on support -&amp;gt; extensions -&amp;gt; Pure and install it. If you are upgrading WAC, the Pure extension can be updated manually or automatically depending on the update settings.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

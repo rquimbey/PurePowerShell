@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nutanix on Robert Quimbey&#39;s Blog</title>
+    <link>http://localhost:1313/tags/nutanix/</link>
+    <description>Recent content in Nutanix on Robert Quimbey&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Apr 2026 10:47:06 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nutanix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nutanix and Everpure</title>
+      <link>http://localhost:1313/posts/nutanix-1/</link>
+      <pubDate>Tue, 14 Apr 2026 10:47:06 -0700</pubDate>
+      <guid>http://localhost:1313/posts/nutanix-1/</guid>
+      <description>&lt;p&gt;I have been working with Nutanix for a couple of years, and the integrations with Everpure went GA in December of 2025.  The public excitement has been building, first at Nutanix.Next in May 2025 when it was first announced, and then last week at .Next in Chicago. We had a real opportunity to take a look at what works well on other hypervisor platforms and really design the integration from a blank piece of paper.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

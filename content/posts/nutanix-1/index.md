@@ -2,6 +2,8 @@
 date = '2026-04-14T10:47:06-07:00'
 draft = false
 title = 'Nutanix and Everpure'
+tags = ['FlashArray', 'Nutanix']
+
 +++
 
 I have been working with Nutanix for a couple of years, and the integrations with Everpure went GA in December of 2025.  The public excitement has been building, first at Nutanix.Next in May 2025 when it was first announced, and then last week at .Next in Chicago. We had a real opportunity to take a look at what works well on other hypervisor platforms and really design the integration from a blank piece of paper.

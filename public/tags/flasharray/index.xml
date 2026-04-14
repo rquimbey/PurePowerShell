@@ -2,32 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FlashArray on Robert Quimbey&#39;s Blog</title>
-    <link>https://PurePowerShell.com/tags/flasharray/</link>
+    <link>http://localhost:1313/tags/flasharray/</link>
     <description>Recent content in FlashArray on Robert Quimbey&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 04 Apr 2026 13:15:39 -0700</lastBuildDate>
-    <atom:link href="https://PurePowerShell.com/tags/flasharray/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/flasharray/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure Local and Everpure</title>
-      <link>https://PurePowerShell.com/posts/azloc1/</link>
+      <link>http://localhost:1313/posts/azloc1/</link>
       <pubDate>Sat, 04 Apr 2026 13:15:39 -0700</pubDate>
-      <guid>https://PurePowerShell.com/posts/azloc1/</guid>
+      <guid>http://localhost:1313/posts/azloc1/</guid>
       <description>&lt;p&gt;I have been working on Azure Local (formerly Azure Stack HCI) for almost five years, and we are now less than 1 month from GA for Fibre Channel external storage. For the initial support in April 2026, there is no OS code change, so you should deploy Azure Local with a Windows Server 2025 certified Fibre Channel card that your server OEM supports in that server model. Connecting to the Everpure FlashArray is done after the deployment from the Azure Portal.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hyper-V CSV Trim</title>
-      <link>https://PurePowerShell.com/posts/csv-trim/</link>
+      <link>http://localhost:1313/posts/csv-trim/</link>
       <pubDate>Fri, 28 Feb 2025 16:03:01 -0800</pubDate>
-      <guid>https://PurePowerShell.com/posts/csv-trim/</guid>
+      <guid>http://localhost:1313/posts/csv-trim/</guid>
       <description>&lt;p&gt;TLDR: Newer versions of Windows will free blocks on a Cluster Shared Volume.&lt;/p&gt;&#xA;&lt;p&gt;I work on a lot of Failover Clusters and about once a year it would come up that a customer had a situation with disk space. Usually it was older, out of support, versions of Windows and the scenario was that recently a bunch of VMs were moved from 1 Cluster Shared Volume (CSV) to another. The CSV volume on the FlashArray was not releasing the blocks. That left a customer with a handful of choices:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hyper-V VSS</title>
-      <link>https://PurePowerShell.com/posts/hv-vss/</link>
+      <link>http://localhost:1313/posts/hv-vss/</link>
       <pubDate>Sat, 15 Feb 2025 11:05:00 -0800</pubDate>
-      <guid>https://PurePowerShell.com/posts/hv-vss/</guid>
+      <guid>http://localhost:1313/posts/hv-vss/</guid>
       <description>&lt;p&gt;There are many different strategies for backing up a production Hyper-V environment. In this blog post I will focus on a hardware Volume Shadow-Copy Service (VSS) snapshot of a Cluster Shared Volume (CSV). VSS creates an application consistent snapshot where all of the VMs are in a good state so that if you restore the volume, or clone the snapshot and mount it outside of the Failover Cluster, the VMs will boot without issue. Keep in mind that this is a hypervisor driven snapshot, which is different from an application snapshot inside of a virtual machine. An Exchange Server or SQL Server database will not show that a &amp;lsquo;backup&amp;rsquo; has been taken. Some third party backup applications (VSS Requestors), can handle this, but that is because the backup application is performing additional work inside of the VMs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Windows Admin Center Modernized Gateway &amp; Pure Storage FlashArray</title>
+      <link>http://localhost:1313/posts/wac/</link>
+      <pubDate>Sat, 08 Feb 2025 12:06:52 -0800</pubDate>
+      <guid>http://localhost:1313/posts/wac/</guid>
+      <description>&lt;p&gt;Microsoft recently released a major update to Windows Admin Center (WAC) &lt;a href=&#34;https://aka.ms/wacdownload&#34; title=&#34;wac&#34;&gt;[direct download link]&lt;/a&gt;. It was originally titled the &amp;ldquo;Modernized Gateway&amp;rdquo; and by GA it was simply the &amp;ldquo;v2 Gateway&amp;rdquo;. Speed is the biggest improvement with page loading times now 2-10x faster. A major change was moving to .NET Core which broke all existing extensions that utilized .NET Framework. Pure Storage released an update to our FlashArray extension right before Christmas (2024). Once you upgrade to or install the v2 Gateway, click on support -&amp;gt; extensions -&amp;gt; Pure and install it. If you are upgrading WAC, the Pure extension can be updated manually or automatically depending on the update settings.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

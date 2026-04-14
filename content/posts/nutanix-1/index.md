@@ -16,7 +16,8 @@ For example:
 
 We decided on a model that was similar to virtual disks, but gave you a real disk, similar to an RDM or pass-through disk. The experience is administratively the same, you simply add a vDisk or Volume Group to the VM, and a Volume is provisioned on the Everpure FlashArray. This disk granularity helps an administrator to focus on the VMs, and not have to worry about what disk(s) the VM is on. If you want to clone the VM, no problem. Take a consistent snapshot across all the disks on the VM, easy. How about replicate at the VM level, built-in.
 
-Deployment
+Deployment  
+
 On the FlashArray this can be as simple as creating a Realm and a Pod in that Realm, and ensuring the NVME-TCP service is enabled on some of the Ethernet ports.  You should minimize the attack surface by creating a management access policy and assigning a service account to that policy. You can also set a quota on the Pod to ensure a development cluster couldn't consume all the capacity on a FlashArray, for example.
 
 In Prism Element (CVM), you can click on external storage enter the FlashArray credentials, select the realm, and select the Pod. At this point you are done and everything will be automatically configured. Most customers want to dedicate uplinks for external storage traffic, so a prerequisite would be to configure that which involves creating a dedicated vSwitch and Interface.
@@ -30,10 +31,12 @@ Above I have created a new vSwitch and selected my fasted, 2x100Gb NICs. For NVM
 ![interface](ntnx-interface.png)
 Above, under interfaces, I will create an interface, select the Pure vSwitch and select the "External Storage" feature.
 
-Fibre Channel or Ethernet?
+Fibre Channel or Ethernet?  
+
 At the time of this writing both 128G FC and 400G Ethernet is available, but hard to find, and not currently supported in a FlashArray. Our recent XLR5, or 5th generation platform, supports but 64G FC and 200G Ethernet. This approximate tripling of bandwidth has been sustained for a while, and expected for at least the next several years. I estimate 256G FC will be generally available around the time 800G Ethernet, in 3-4 years.  The important distinction here is that iSCSI is older, it is still SCSI, and with more throughput can sometimes leave IO on the table if you don't double, or in some cases triple the number of sessions on the same physical storage path. With NVMe, the traditional method involved RoCE or RoCEv2, which is RDMA (Remote Direct Memory Access) over Converged Ethernet. The problem with RoCE is every switch in the path has to support it and I have been involved so often where it was not configured correctly. With NVMeoF/TCP, if you can ping it you are good. It is using the standard TCP/IP as the fabric.  Be sure to utilize Jumbo Frames. With iSCSI it is a rounding error, with NVMeoF/TCP it is worth the effort!
 
-AHV or CVM?
+AHV or CVM?  
+
 Initially it was thought the cost of another network hop (10-30us) was not worth it. In practice had AHV been the connection to the FlashArray, we could have achieved, a very slight latency win.  However, we would have broken every single thing above that in the stack. Imagine having to get a particular 3rd party backup application to plugin and work with Everpure! With the CVM being the API endpoint, everything works! 
 For instance:
 
@@ -55,5 +58,5 @@ Above, right click a VM, Data Protection, Create a Recovery Point.  All the vDis
 
 Since GA late last year, we added support for FlashArray//C and Nutanix Kubernetes Platform (NKP). Just a few weeks ago AOS 7.5.1 went GA adding live migration between Nutanix Compute Clusters, and 0 RPO, synchronous replication between Compute Clusters!
 
-In the next quarter look for 7.6, the payload will be impressive.  
+In the next quarter look for 7.6, the payload will be impressive.   
 'til then
